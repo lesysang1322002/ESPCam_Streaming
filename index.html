@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP Firebase App</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyBsRs2-1SexV2D3z-OsFUz-SIy_9fsCPbw",
+    authDomain: "mcb-nhom-9.firebaseapp.com",
+    databaseURL: "https://mcb-nhom-9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "mcb-nhom-9",
+    storageBucket: "mcb-nhom-9.appspot.com",
+    messagingSenderId: "673803777807",
+    appId: "1:673803777807:web:31a463e2fc2dfa8e7c707a"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+  </script>
+<script src="app.js" defer></script>
+
+</head>
+<body>
+  <div class="main-container">
+    <div class="topnav">
+      <h1>ESP32-CAM Web App <i class="fas fa-camera"></i></h1>
+    </div>
+    
+    <div class="image-container">
+      <p><img id="img" width="500px"></p> 
+      <p>Last picture taken: <span id="date-time"></span></p>
+    </div>
+
+    <div class="sensor-container">
+      <div class="sensor">
+        <label for="temperature"><strong>Temperature</strong></label>
+        <textarea id="temperature" readonly></textarea>
+      </div>
+      <div class="sensor">
+        <label for="humidity"><strong>Humidity</strong></label>
+        <textarea id="humidity" readonly></textarea>
+      </div>
+      <div class="sensor">
+        <label for="airQuality"><strong>Air Quality</strong></label>
+        <textarea id="airQuality" readonly></textarea>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <div class="button-row">
+        <button id="button1" onclick = "Button1()" >Button 1</button>
+        <button id="button2" onclick = "Button2()" >Button 2</button>
+      </div>
+      <div class="button-row">
+        <button id="button3" onclick = "Button3()" >Button 3</button>
+        <button id="button4" onclick = "Button4()" >Button 4</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
